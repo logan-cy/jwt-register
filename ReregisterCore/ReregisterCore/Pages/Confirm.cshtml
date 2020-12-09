@@ -1,0 +1,22 @@
+﻿@page
+@model ReregisterCore.Pages.ConfirmModel
+@{
+    ViewData["Title"] = "Account Confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        @if (Model.Success)
+        {
+            <p style="text-align:center;" class="text-success">Your account has been successfully confirmed. You may now <a asp-page="Login">Log In</a></p>
+        }
+        else
+        {
+            <p style="text-align:center;" class="text-danger">We were unable to confirm your account based on the following exception:<br />
+                @Model.Error
+            </p>
+        }
+    </div>
+</div>
