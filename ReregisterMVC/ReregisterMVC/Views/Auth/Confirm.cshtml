@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Account Confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        @if (TempData["ConfirmResult"] != null && (bool)TempData["ConfirmResult"] == true)
+        {
+            <p style="text-align:center;" class="text-success">Your account has been successfully confirmed. You may now @Html.ActionLink("Log in", "Login", "Account")</p>
+        }
+        else
+        {
+            <p style="text-align:center;" class="text-danger">
+                We were unable to confirm your account based on the following exception:<br />
+                @TempData["ConfirmError"].ToString();
+            </p>
+        }
+    </div>
+</div>
