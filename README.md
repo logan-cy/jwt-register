@@ -10,6 +10,10 @@ Once the user clicks on the link, we decode the registration model back from the
 
 The token is evaluated and used with the UserManager to create the user account.
 
+## Browsing the code
+
+Pretty much everything is in the Pages folder - Confirm and Register pages. Other than that is a basic email service and DTO classes.
+
 ## I KNOW
 
 That this isn't the purpose of JWT tokens, but I needed something that couldn't be easily fooled. In this case, if the token is artificially created by some other means (in particular without the app **secret**), the system *SHOULD* be unable to decode the token and therefore, will fail to register the user account.
